@@ -31,5 +31,10 @@ namespace MauiApp1.ViewModel
             if (Items.Contains(toDelete)) { Items.Remove(toDelete); }
         }
 
+        [RelayCommand]
+        async Task Tap(string s)
+        {
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?TaskName={s}");
+        }
     }
 }
